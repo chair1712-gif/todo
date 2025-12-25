@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App with API - Spatra</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-tasks"></i> Todo App</h1>
+            <p class="subtitle">Aplikasi Todo dengan API Backend</p>
+            <div class="api-status">
+                <span id="statusDot" class="status-dot"></span>
+                <span id="statusText">Mengecek API...</span>
+            </div>
+        </header>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <input 
+                type="text" 
+                id="todoInput" 
+                placeholder="Tambahkan tugas baru..."
+                autocomplete="off"
+            >
+            <button id="addBtn" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Tambah
+            </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="active">Aktif</button>
+            <button class="filter-btn" data-filter="completed">Selesai</button>
+        </div>
+
+        <!-- Todo List -->
+        <div class="todo-container">
+            <ul id="todoList">
+                <!-- Todo items akan muncul di sini -->
+                <li class="empty-state">
+                    <i class="fas fa-clipboard-list"></i>
+                    <p>Tidak ada tugas. Yuk tambahkan!</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Total:</span>
+                <span id="totalCount" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Aktif:</span>
+                <span id="activeCount" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Selesai:</span>
+                <span id="completedCount" class="stat-value">0</span>
+            </div>
+        </div>
+
+        <!-- API Info -->
+        <div class="api-info">
+            <h3><i class="fas fa-code"></i> Informasi API</h3>
+            <p>API Endpoint: <code id="apiUrl">Loading...</code></p>
+            <div class="endpoints">
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <code>/api/todos</code> - Ambil semua todo
+                </div>
+                <div class="endpoint">
+                    <span class="method post">POST</span>
+                    <code>/api/todos</code> - Tambah todo baru
+                </div>
+                <div class="endpoint">
+                    <span class="method put">PUT</span>
+                    <code>/api/todos/{id}</code> - Update todo
+                </div>
+                <div class="endpoint">
+                    <span class="method delete">DELETE</span>
+                    <code>/api/todos/{id}</code> - Hapus todo
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Dibuat dengan ❤️ menggunakan Netlify Functions</p>
+            <p class="tech-stack">
+                <i class="fab fa-html5"></i> HTML5 • 
+                <i class="fab fa-css3-alt"></i> CSS3 • 
+                <i class="fab fa-js"></i> JavaScript • 
+                <i class="fas fa-server"></i> Netlify Functions
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
